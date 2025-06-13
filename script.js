@@ -1,5 +1,5 @@
 
-    (() => {
+ 
       // Candidate data for each category with logo images
       const candidates = {
         'head-boy': [
@@ -259,5 +259,3 @@
 
       // Initial view
       showHome();
-    })();
-  
