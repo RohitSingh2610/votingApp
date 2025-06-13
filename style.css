@@ -1,0 +1,472 @@
+ /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f2f1 0%, #f0f4f8 100%);
+      color: #0f7c75; /* Dark teal */
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Container */
+    .container {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    /* Header */
+     header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
+      user-select: none;
+    }
+    
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(15, 124, 117, 0.3);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .school-name {
+      font-weight: 800;
+      font-size: 2.2rem;
+      color: #0c46a9;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      line-height: 1.2;
+    }
+     .logo-ask {
+      height: 40px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    /* Title */
+    h1.title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 48px;
+      color: #084d47;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    /* Buttons grid */
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    /* Default teal buttons for Head Boy and Head Girl */
+    button.vote-category-btn {
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(20,184,166,0.5);
+      transition: background-color 0.25s ease, box-shadow 0.3s ease;
+    }
+    button.vote-category-btn:hover,
+    button.vote-category-btn:focus {
+      outline: none;
+      box-shadow: 0 6px 16px rgba(15,124,117,0.7);
+    }
+    button.vote-category-btn:active {
+    }
+
+    /* Head boy/girl teal */
+    button[data-category="head-boy"],
+    button[data-category="head-girl"] {
+      background: #14b8a6; /* teal 500 */
+    }
+    button[data-category="head-boy"]:hover,
+    button[data-category="head-girl"]:hover,
+    button[data-category="head-boy"]:focus,
+    button[data-category="head-girl"]:focus {
+      background: #0f7c75; /* teal 700 */
+      box-shadow: 0 6px 16px rgba(15,124,117,0.8);
+    }
+    button[data-category="head-boy"]:active,
+    button[data-category="head-girl"]:active {
+      background: #0a5a53; /* teal 900 */
+    }
+
+    /* House colors */
+
+    /* Green House */
+    button[data-category^="green-house"] {
+      background: #10b981; /* green-500 */
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.6);
+    }
+    button[data-category^="green-house"]:hover,
+    button[data-category^="green-house"]:focus {
+      background: #047857; /* green-800 */
+      box-shadow: 0 6px 16px rgba(4, 120, 87, 0.85);
+    }
+    button[data-category^="green-house"]:active {
+      background: #064e3b; /* green-900 */
+    }
+    button[data-category^="green-house"] .material-icons {
+      color: #22c55e; /* green-400 */
+    }
+
+    /* Yellow House */
+    button[data-category^="yellow-house"] {
+      background: #facc15; /* yellow-400 */
+      box-shadow: 0 4px 12px rgba(250, 204, 21, 0.6);
+      color: #374151; /* Dark text on yellow */
+    }
+    button[data-category^="yellow-house"]:hover,
+    button[data-category^="yellow-house"]:focus {
+      background: #eab308; /* yellow-500 */
+      box-shadow: 0 6px 16px rgba(234, 179, 8, 0.85);
+      color: #1f2937;
+    }
+    button[data-category^="yellow-house"]:active {
+      background: #a16207; /* yellow-800 */
+      color: #fbbf24;
+    }
+    button[data-category^="yellow-house"] .material-icons {
+      color: #fde68a; /* yellow-300 */
+    }
+
+    /* Red House */
+    button[data-category^="red-house"] {
+      background: #ef4444; /* red-500 */
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.6);
+    }
+    button[data-category^="red-house"]:hover,
+    button[data-category^="red-house"]:focus {
+      background: #b91c1c; /* red-700 */
+      box-shadow: 0 6px 16px rgba(185, 28, 28, 0.85);
+    }
+    button[data-category^="red-house"]:active {
+      background: #7f1d1d; /* red-900 */
+    }
+    button[data-category^="red-house"] .material-icons {
+      color: #f87171; /* red-400 */
+    }
+
+    /* Blue House */
+    button[data-category^="blue-house"] {
+      background: #3b82f6; /* blue-500 */
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.6);
+    }
+    button[data-category^="blue-house"]:hover,
+    button[data-category^="blue-house"]:focus {
+      background: #1e40af; /* blue-800 */
+      box-shadow: 0 6px 16px rgba(30, 64, 175, 0.85);
+    }
+    button[data-category^="blue-house"]:active {
+      background: #1e3a8a; /* blue-900 */
+    }
+    button[data-category^="blue-house"] .material-icons {
+      color: #93c5fd; /* blue-300 */
+    }
+
+    /* Candidate List View */
+    #candidate-view {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #candidate-view h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: #084d47;
+      text-align: center;
+    }
+
+    .candidates-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      width: 100%;
+      max-width: 720px;
+      margin-bottom: 40px;
+    }
+
+    .candidate-card {
+      background: #def2f1; /* default Pale teal */
+      padding: 20px 16px;
+      border-radius: 14px;
+      box-shadow: 0 2px 6px rgba(15,124,117,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+      position: relative;
+    }
+    /* Accent color bars left for houses */
+    .candidate-card.green-house {
+      background: #d1fae5; /* green-100 */
+      border-left: 6px solid #10b981; /* green-500 */
+    }
+    .candidate-card.yellow-house {
+      background: #fef3c7; /* yellow-100 */
+      border-left: 6px solid #facc15; /* yellow-400 */
+    }
+    .candidate-card.red-house {
+      background: #fee2e2; /* red-100 */
+      border-left: 6px solid #ef4444; /* red-500 */
+    }
+    .candidate-card.blue-house {
+      background: #dbeafe; /* blue-100 */
+      border-left: 6px solid #3b82f6; /* blue-500 */
+    }
+    /* Head boy/girl teal accent */
+    .candidate-card.head {
+      background: #def2f1; /* pale teal */
+      border-left: 6px solid #14b8a6; /* teal */
+    }
+
+    .candidate-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .candidate-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .candidate-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0f7c75;
+      text-align: center;
+      word-break: break-word;
+    }
+    button.vote-btn {
+      background: #14b8a6; /* teal 500 */
+      border: none;
+      border-radius: 12px;
+      padding: 10px 24px;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(20,184,166,0.6);
+      transition: background-color 0.25s ease, box-shadow 0.3s ease;
+      align-self: stretch;
+      user-select: none;
+    }
+    button.vote-btn:hover,
+    button.vote-btn:focus {
+      background: #0f7c75; /* teal 700 */
+      outline: none;
+      box-shadow: 0 6px 20px rgba(15,124,117,0.8);
+    }
+    button.vote-btn:active {
+      background: #0a5a53; /* teal 900 */
+    }
+
+    /* Thank you message */
+    #thank-you-message {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #0a5a53;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      text-align: center;
+    }
+    #thank-you-message.visible {
+      opacity: 1;
+    }
+
+    /* Results View */
+    #results-view {
+      display: none;
+      max-width: 720px;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+    #results-view h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #084d47;
+      text-align: center;
+    }
+    .results-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      width: 100%;
+    }
+    .result-category {
+      border-radius: 14px;
+      padding: 20px 24px;
+      box-shadow: 0 2px 6px rgba(15,124,117,0.2);
+    }
+    /* Color backgrounds for result categories */
+    .result-category.green-house {
+      background: #d1fae5; /* green-100 */
+      border-left: 8px solid #10b981; /* green-500 */
+    }
+    .result-category.yellow-house {
+      background: #fef3c7; /* yellow-100 */
+      border-left: 8px solid #facc15; /* yellow-400 */
+    }
+    .result-category.red-house {
+      background: #fee2e2; /* red-100 */
+      border-left: 8px solid #ef4444; /* red-500 */
+    }
+    .result-category.blue-house {
+      background: #dbeafe; /* blue-100 */
+      border-left: 8px solid #3b82f6; /* blue-500 */
+    }
+    /* Head category teal */
+    .result-category.head {
+      background: #def2f1; /* pale teal */
+      border-left: 8px solid #14b8a6;
+    }
+    .result-category h3 {
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: #0f7c75;
+    }
+    .result-candidates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 16px;
+    }
+    .result-candidate {
+      background: white;
+      border-radius: 10px;
+      padding: 12px 16px;
+      box-shadow: 0 1px 4px rgba(15,124,117,0.25);
+      font-weight: 600;
+      font-size: 1rem;
+      color: #004d40;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .result-candidate .vote-count {
+      background: #0f7c75;
+      color: white;
+      min-width: 32px;
+      text-align: center;
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-weight: 700;
+      font-feature-settings: 'tnum';
+      font-variant-numeric: tabular-nums;
+    }
+    #results-back-btn {
+      margin-top: 36px;
+      background: #14b8a6; /* teal 500 */
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(20,184,166,0.5);
+      transition: background-color 0.25s ease, box-shadow 0.3s ease;
+      align-self: center;
+      user-select: none;
+    }
+    #results-back-btn:hover,
+    #results-back-btn:focus {
+      background: #0f7c75; /* teal 700 */
+      outline: none;
+      box-shadow: 0 6px 16px rgba(15,124,117,0.7);
+    }
+    #results-back-btn:active {
+      background: #0a5a53; /* teal 900 */
+    }
+
+    /* Reset Button Styles */
+    #reset-btn {
+      background: #ef4444; /* Red 500 */
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.5);
+      transition: background-color 0.25s ease, box-shadow 0.3s ease;
+      align-self: center;
+      user-select: none;
+      margin-top: 12px;
+    }
+    #reset-btn:hover,
+    #reset-btn:focus {
+      background: #b91c1c; /* Red 700 */
+      outline: none;
+      box-shadow: 0 6px 16px rgba(185, 28, 28, 0.7);
+    }
+    #reset-btn:active {
+      background: #7f1d1d; /* Red 900 */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .button-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+    }

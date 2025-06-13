@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gajera International School Utran Voting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f2f1 0%, #f0f4f8 100%);
+      color: #0f7c75; /* Dark teal */
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Container */
+    .container {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    /* Header */
+     header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
+      user-select: none;
+    }
+    
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(15, 124, 117, 0.3);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .school-name {
+      font-weight: 800;
+      font-size: 2.2rem;
+      color: #0c46a9;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      line-height: 1.2;
+    }
+     .logo-ask {
+      height: 40px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    /* Title */
+    h1.title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 48px;
+      color: #084d47;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    /* Buttons grid */
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    /* Default teal buttons for Head Boy and Head Girl */
+    button.vote-category-btn {
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(20,184,166,0.5);
+      transition: background-color 0.25s ease, box-shadow 0.3s ease;
+    }
+    button.vote-category-btn:hover,
+    button.vote-category-btn:focus {
+      outline: none;
+      box-shadow: 0 6px 16px rgba(15,124,117,0.7);
+    }
+    button.vote-category-btn:active {
+    }
+
+    /* Head boy/girl teal */
+    button[data-category="head-boy"],
+    button[data-category="head-girl"] {
+      background: #14b8a6; /* teal 500 */
+    }
+    button[data-category="head-boy"]:hover,
+    button[data-category="head-girl"]:hover,
+    button[data-category="head-boy"]:focus,
+    button[data-category="head-girl"]:focus {
+      background: #0f7c75; /* teal 700 */
+      box-shadow: 0 6px 16px rgba(15,124,117,0.8);
+    }
+    button[data-category="head-boy"]:active,
+    button[data-category="head-girl"]:active {
+      background: #0a5a53; /* teal 900 */
+    }
+
+    /* House colors */
+
+    /* Green House */
+    button[data-category^="green-house"] {
+      background: #10b981; /* green-500 */
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.6);
+    }
+    button[data-category^="green-house"]:hover,
+    button[data-category^="green-house"]:focus {
+      background: #047857; /* green-800 */
+      box-shadow: 0 6px 16px rgba(4, 120, 87, 0.85);
+    }
+    button[data-category^="green-house"]:active {
+      background: #064e3b; /* green-900 */
+    }
+    button[data-category^="green-house"] .material-icons {
+      color: #22c55e; /* green-400 */
+    }
+
+    /* Yellow House */
+    button[data-category^="yellow-house"] {
+      background: #facc15; /* yellow-400 */
+      box-shadow: 0 4px 12px rgba(250, 204, 21, 0.6);
+      color: #374151; /* Dark text on yellow */
+    }
+    button[data-category^="yellow-house"]:hover,
+    button[data-category^="yellow-house"]:focus {
+      background: #eab308; /* yellow-500 */
+      box-shadow: 0 6px 16px rgba(234, 179, 8, 0.85);
+      color: #1f2937;
+    }
+    button[data-category^="yellow-house"]:active {
+      background: #a16207; /* yellow-800 */
+      color: #fbbf24;
+    }
+    button[data-category^="yellow-house"] .material-icons {
+      color: #fde68a; /* yellow-300 */
+    }
+
+    /* Red House */
+    button[data-category^="red-house"] {
+      background: #ef4444; /* red-500 */
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.6);
+    }
+    button[data-category^="red-house"]:hover,
+    button[data-category^="red-house"]:focus {
+      background: #b91c1c; /* red-700 */
+      box-shadow: 0 6px 16px rgba(185, 28, 28, 0.85);
+    }
+    button[data-category^="red-house"]:active {
+      background: #7f1d1d; /* red-900 */
+    }
+    button[data-category^="red-house"] .material-icons {
+      color: #f87171; /* red-400 */
+    }
+
+    /* Blue House */
+    button[data-category^="blue-house"] {
+      background: #3b82f6; /* blue-500 */
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.6);
+    }
+    button[data-category^="blue-house"]:hover,
+    button[data-category^="blue-house"]:focus {
+      background: #1e40af; /* blue-800 */
+      box-shadow: 0 6px 16px rgba(30, 64, 175, 0.85);
+    }
+    button[data-category^="blue-house"]:active {
+      background: #1e3a8a; /* blue-900 */
+    }
+    button[data-category^="blue-house"] .material-icons {
+      color: #93c5fd; /* blue-300 */
+    }
+
+    /* Candidate List View */
+    #candidate-view {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #candidate-view h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: #084d47;
+      text-align: center;
+    }
+
+    .candidates-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      width: 100%;
+      max-width: 720px;
+      margin-bottom: 40px;
+    }
+
+    .candidate-card {
+      background: #def2f1; /* default Pale teal */
+      padding: 20px 16px;
+      border-radius: 14px;
+      box-shadow: 0 2px 6px rgba(15,124,117,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+      position: relative;
+    }
+    /* Accent color bars left for houses */
+    .candidate-card.green-house {
+      background: #d1fae5; /* green-100 */
+      border-left: 6px solid #10b981; /* green-500 */
+    }
+    .candidate-card.yellow-house {
+      background: #fef3c7; /* yellow-100 */
+      border-left: 6px solid #facc15; /* yellow-400 */
+    }
+    .candidate-card.red-house {
+      background: #fee2e2; /* red-100 */
+      border-left: 6px solid #ef4444; /* red-500 */
+    }
+    .candidate-card.blue-house {
+      background: #dbeafe; /* blue-100 */
+      border-left: 6px solid #3b82f6; /* blue-500 */
+    }
+    /* Head boy/girl teal accent */
+    .candidate-card.head {
+      background: #def2f1; /* pale teal */
+      border-left: 6px solid #14b8a6; /* teal */
+    }
+
+    .candidate-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .candidate-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .candidate-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0f7c75;
+      text-align: center;
+      word-break: break-word;
+    }
+    button.vote-btn {
+      background: #14b8a6; /* teal 500 */
+      border: none;
+      border-radius: 12px;
+      padding: 10px 24px;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(20,184,166,0.6);
+      transition: background-color 0.25s ease, box-shadow 0.3s ease;
+      align-self: stretch;
+      user-select: none;
+    }
+    button.vote-btn:hover,
+    button.vote-btn:focus {
+      background: #0f7c75; /* teal 700 */
+      outline: none;
+      box-shadow: 0 6px 20px rgba(15,124,117,0.8);
+    }
+    button.vote-btn:active {
+      background: #0a5a53; /* teal 900 */
+    }
+
+    /* Thank you message */
+    #thank-you-message {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #0a5a53;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      text-align: center;
+    }
+    #thank-you-message.visible {
+      opacity: 1;
+    }
+
+    /* Results View */
+    #results-view {
+      display: none;
+      max-width: 720px;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+    #results-view h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #084d47;
+      text-align: center;
+    }
+    .results-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      width: 100%;
+    }
+    .result-category {
+      border-radius: 14px;
+      padding: 20px 24px;
+      box-shadow: 0 2px 6px rgba(15,124,117,0.2);
+    }
+    /* Color backgrounds for result categories */
+    .result-category.green-house {
+      background: #d1fae5; /* green-100 */
+      border-left: 8px solid #10b981; /* green-500 */
+    }
+    .result-category.yellow-house {
+      background: #fef3c7; /* yellow-100 */
+      border-left: 8px solid #facc15; /* yellow-400 */
+    }
+    .result-category.red-house {
+      background: #fee2e2; /* red-100 */
+      border-left: 8px solid #ef4444; /* red-500 */
+    }
+    .result-category.blue-house {
+      background: #dbeafe; /* blue-100 */
+      border-left: 8px solid #3b82f6; /* blue-500 */
+    }
+    /* Head category teal */
+    .result-category.head {
+      background: #def2f1; /* pale teal */
+      border-left: 8px solid #14b8a6;
+    }
+    .result-category h3 {
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: #0f7c75;
+    }
+    .result-candidates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 16px;
+    }
+    .result-candidate {
+      background: white;
+      border-radius: 10px;
+      padding: 12px 16px;
+      box-shadow: 0 1px 4px rgba(15,124,117,0.25);
+      font-weight: 600;
+      font-size: 1rem;
+      color: #004d40;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .result-candidate .vote-count {
+      background: #0f7c75;
+      color: white;
+      min-width: 32px;
+      text-align: center;
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-weight: 700;
+      font-feature-settings: 'tnum';
+      font-variant-numeric: tabular-nums;
+    }
+    #results-back-btn {
+      margin-top: 36px;
+      background: #14b8a6; /* teal 500 */
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(20,184,166,0.5);
+      transition: background-color 0.25s ease, box-shadow 0.3s ease;
+      align-self: center;
+      user-select: none;
+    }
+    #results-back-btn:hover,
+    #results-back-btn:focus {
+      background: #0f7c75; /* teal 700 */
+      outline: none;
+      box-shadow: 0 6px 16px rgba(15,124,117,0.7);
+    }
+    #results-back-btn:active {
+      background: #0a5a53; /* teal 900 */
+    }
+
+    /* Reset Button Styles */
+    #reset-btn {
+      background: #ef4444; /* Red 500 */
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.5);
+      transition: background-color 0.25s ease, box-shadow 0.3s ease;
+      align-self: center;
+      user-select: none;
+      margin-top: 12px;
+    }
+    #reset-btn:hover,
+    #reset-btn:focus {
+      background: #b91c1c; /* Red 700 */
+      outline: none;
+      box-shadow: 0 6px 16px rgba(185, 28, 28, 0.7);
+    }
+    #reset-btn:active {
+      background: #7f1d1d; /* Red 900 */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .button-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+    }
+  </style> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="logo" aria-hidden="true" title="School Logo">
+        <!-- Simple leaf icon representing a stylized "G" -->
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"  >
+          <img src="Logo.png"/>
+        </svg>
+      </div>
+      <div class="school-name">Gajera International School, Utran</div>
+      <img class="logo-ask" src="Think Ask Rise.png" alt="Think Ask Rise Logo" />
+    </header>
+
+    <h1 class="title">Student Council Election 2025-26 </h1>
+
+    <!-- Homepage buttons -->
+    <section id="home-view" aria-label="Voting categories">
+      <div class="button-grid" role="list">
+        <button type="button" class="vote-category-btn" role="listitem" data-category="head-boy" aria-describedby="desc-head-boy">
+          <span class="material-icons" aria-hidden="true">boy</span> Head Boy
+        </button>
+        <button type="button" class="vote-category-btn" role="listitem" data-category="head-girl" aria-describedby="desc-head-girl">
+          <span class="material-icons" aria-hidden="true">girl</span> Head Girl
+        </button>
+        <button type="button" class="vote-category-btn green-house" role="listitem" data-category="green-house-male" aria-describedby="desc-green-house-male">
+          <span class="material-icons" aria-hidden="true" style="color:#22c55e">male</span> Green House Male
+        </button>
+        <button type="button" class="vote-category-btn green-house" role="listitem" data-category="green-house-female" aria-describedby="desc-green-house-female">
+          <span class="material-icons" aria-hidden="true" style="color:#22c55e">female</span> Green House Female
+        </button>
+        <button type="button" class="vote-category-btn yellow-house" role="listitem" data-category="yellow-house-male" aria-describedby="desc-yellow-house-male">
+          <span class="material-icons" aria-hidden="true" style="color:#fcd34d">male</span> Yellow House Male
+        </button>
+        <button type="button" class="vote-category-btn yellow-house" role="listitem" data-category="yellow-house-female" aria-describedby="desc-yellow-house-female">
+          <span class="material-icons" aria-hidden="true" style="color:#fcd34d">female</span> Yellow House Female
+        </button>
+        <button type="button" class="vote-category-btn red-house" role="listitem" data-category="red-house-male" aria-describedby="desc-red-house-male">
+          <span class="material-icons" aria-hidden="true" style="color:#f87171">male</span> Red House Male
+        </button>
+        <button type="button" class="vote-category-btn red-house" role="listitem" data-category="red-house-female" aria-describedby="desc-red-house-female">
+          <span class="material-icons" aria-hidden="true" style="color:#f87171">female</span> Red House Female
+        </button>
+        <button type="button" class="vote-category-btn blue-house" role="listitem" data-category="blue-house-male" aria-describedby="desc-blue-house-male">
+          <span class="material-icons" aria-hidden="true" style="color:#60a5fa">male</span> Blue House Male
+        </button>
+        <button type="button" class="vote-category-btn blue-house" role="listitem" data-category="blue-house-female" aria-describedby="desc-blue-house-female">
+          <span class="material-icons" aria-hidden="true" style="color:#60a5fa">female</span> Blue House Female
+        </button>
+      </div>
+
+      <!-- Results and Reset buttons -->
+      <div style="display:flex; justify-content:center; gap: 24px; flex-wrap: wrap;">
+        <button id="show-results-btn" class="vote-category-btn" aria-label="View voting results" style="min-width: 180px;">
+          <span class="material-icons" aria-hidden="true">poll</span> View Results
+        </button>
+        <button id="reset-btn" aria-label="Reset all votes and clear the voting data" style="min-width: 180px;">
+          <span class="material-icons" aria-hidden="true">restart_alt</span> Reset Votes
+        </button>
+      </div>
+
+      <div id="category-descriptions" style="visibility:hidden; position:absolute; height:0; overflow:hidden;">
+        <p id="desc-head-boy">Vote for the candidate for Head Boy position</p>
+        <p id="desc-head-girl">Vote for the candidate for Head Girl position</p>
+        <p id="desc-green-house-male">Vote for the male House Captain of Green House</p>
+        <p id="desc-green-house-female">Vote for the female House Captain of Green House</p>
+        <p id="desc-yellow-house-male">Vote for the male House Captain of Yellow House</p>
+        <p id="desc-yellow-house-female">Vote for the female House Captain of Yellow House</p>
+        <p id="desc-red-house-male">Vote for the male House Captain of Red House</p>
+        <p id="desc-red-house-female">Vote for the female House Captain of Red House</p>
+        <p id="desc-blue-house-male">Vote for the male House Captain of Blue House</p>
+        <p id="desc-blue-house-female">Vote for the female House Captain of Blue House</p>
+      </div>
+    </section>
+
+    <!-- Candidate view -->
+    <section id="candidate-view" aria-live="polite" aria-atomic="true">
+      <h2 id="candidate-category-title"></h2>
+      <div class="candidates-list" role="list" id="candidates-list"></div>
+      <div id="thank-you-message" role="alert" aria-live="assertive"></div>
+    </section>
+
+    <!-- Results view -->
+    <section id="results-view" aria-live="polite" aria-atomic="true" tabindex="-1">
+      <h2>Voting Results</h2>
+      <div class="results-list" id="results-list"></div>
+      <button id="results-back-btn">Back to Voting</button>
+    </section>
+  </div>
+
+  <!-- <script>
+    (() => {
+      // Candidate data for each category with logo images
+      const candidates = {
+        'head-boy': [
+          { name: "Aalokik Dingwani", logo: "Student Election Council 2025/5.png" },
+          { name: "Ved Desai", logo: "Student Election Council 2025/4.png" },
+        
+        ],
+        'head-girl': [
+          { name: "Jahanvi Balar", logo: "Student Election Council 2025/1.png" },
+          { name: "Riddhi Soni", logo: "Student Election Council 2025/3.png" },
+          { name: "Astha Shyani", logo: "Student Election Council 2025/2.png" }
+        ],
+        'green-house-male': [
+          { name: "Dharm Songara", logo: "Student Election Council 2025/11.png" },
+          { name: "Harsh Vanani", logo: "Student Election Council 2025/17.png" },
+          { name: "Taksh Khunt", logo: "Student Election Council 2025/14.png" },
+          { name: "Ansh Usdadiya", logo: "Student Election Council 2025/13.png" }
+        ],
+        'green-house-female': [
+          { name: "Priyangi Patel", logo: "Student Election Council 2025/15.png" },
+          { name: "Angel Hirpara", logo: "Student Election Council 2025/12.png" },
+          { name: "Pal Koladiya", logo: "Student Election Council 2025/16.png" }
+        ],
+        'yellow-house-male': [
+          { name: "Aksh Ramani", logo: "Student Election Council 2025/31.png" },
+          { name: "Jenil Kathiriya", logo: "Student Election Council 2025/29.png" },
+          { name: "Kanishk Jasani", logo: "Student Election Council 2025/27.png" },
+          { name: "Kirtipal Singh", logo: "Student Election Council 2025/26.png" }
+        ],
+        'yellow-house-female': [
+          { name: "Nirva Vekariya", logo: "Student Election Council 2025/30.png" },
+          { name: "Dhyana Patel", logo: "Student Election Council 2025/32.png" },
+          { name: "Dhyani Bhayani", logo: "Student Election Council 2025/28.png" }
+        ],
+        'red-house-male': [
+          { name: "Priyansh Bhesaniya", logo: "Student Election Council 2025/6.png" },
+          { name: "Dhyey Savaliya", logo: "Student Election Council 2025/7.png" },
+          { name: "Dwij Patel", logo: "Logo.png" },
+          { name: "Hem Patel", logo: "Student Election Council 2025/8.png" }
+        ],
+        'red-house-female': [
+          { name: "Dhwani Vaghasiya", logo: "Student Election Council 2025/10.png" },
+          { name: "Yasheeka Poojari", logo: "Student Election Council 2025/9.png" },
+          { name: "Sakshi Tiwari", logo: "Logo.png" }
+        ],
+        'blue-house-male': [
+          { name: "Ansh Barnwal", logo: "Student Election Council 2025/23.png" },
+          { name: "Dev Goyani", logo: "Student Election Council 2025/20.png" },
+          { name: "Aaditiya Shah", logo: "Student Election Council 2025/22.png" },
+          { name: "Dhyey Patel", logo: "Student Election Council 2025/18.png" }
+        ],
+        'blue-house-female': [
+          { name: "Tannu Tiwari", logo: "Student Election Council 2025/25.png" },
+          { name: "Dhruvi Meghani", logo: "Student Election Council 2025/19.png" },
+          { name: "Soumya Bhesaniya", logo: "Student Election Council 2025/24.png" },
+          { name: "Devi Pandya", logo: "Student Election Council 2025/21.png" }
+        ]
+      };
+
+      const homeView = document.getElementById('home-view');
+      const candidateView = document.getElementById('candidate-view');
+      const candidateListEl = document.getElementById('candidates-list');
+      const candidateCategoryTitle = document.getElementById('candidate-category-title');
+      const thankYouMessage = document.getElementById('thank-you-message');
+
+      const resultsView = document.getElementById('results-view');
+      const resultsList = document.getElementById('results-list');
+      const resultsBackBtn = document.getElementById('results-back-btn');
+      const showResultsBtn = document.getElementById('show-results-btn');
+      const resetBtn = document.getElementById('reset-btn');
+
+      // Navigation between views
+      function showHome() {
+        candidateView.style.display = 'none';
+        resultsView.style.display = 'none';
+        homeView.style.display = 'block';
+        candidateCategoryTitle.textContent = '';
+        candidateListEl.innerHTML = '';
+        thankYouMessage.textContent = '';
+        thankYouMessage.classList.remove('visible');
+        // Return focus to the results button for accessibility if coming back from results
+        showResultsBtn.focus();
+      }
+      
+      function showCandidates(category) {
+        const displayCategory = categoryDisplayName(category);
+        candidateCategoryTitle.textContent = `Candidates for ${displayCategory}`;
+        candidateListEl.innerHTML = '';
+        thankYouMessage.textContent = '';
+        thankYouMessage.classList.remove('visible');
+
+        const candidateData = candidates[category] || [];
+        candidateData.forEach(candidate => {
+          const card = document.createElement('div');
+          card.className = 'candidate-card ' + categoryClass(category);
+          card.setAttribute('role', 'listitem');
+
+          // Add candidate logo
+          const logoDiv = document.createElement('div');
+          logoDiv.className = 'candidate-logo';
+          const logoImg = document.createElement('img');
+          logoImg.src = candidate.logo;
+          logoImg.alt = `${candidate.name}'s photo`;
+          logoDiv.appendChild(logoImg);
+          
+          const candidateNameEl = document.createElement('div');
+          candidateNameEl.className = 'candidate-name';
+          candidateNameEl.textContent = candidate.name;
+
+          const voteBtn = document.createElement('button');
+          voteBtn.className = 'vote-btn';
+          voteBtn.textContent = 'Vote';
+          voteBtn.setAttribute('aria-label', `Vote for ${candidate.name} in ${displayCategory}`);
+          voteBtn.addEventListener('click', () => castVote(category, candidate.name));
+
+          card.appendChild(logoDiv);
+          card.appendChild(candidateNameEl);
+          card.appendChild(voteBtn);
+          candidateListEl.appendChild(card);
+        });
+
+        homeView.style.display = 'none';
+        resultsView.style.display = 'none';
+        candidateView.style.display = 'flex';
+      }
+
+      // Return a simplified house class name for styling candidate cards & results categories
+      function categoryClass(cat) {
+        if(cat.startsWith('green-house')) return 'green-house';
+        if(cat.startsWith('yellow-house')) return 'yellow-house';
+        if(cat.startsWith('red-house')) return 'red-house';
+        if(cat.startsWith('blue-house')) return 'blue-house';
+        if(cat.startsWith('head-')) return 'head';
+        return '';
+      }
+
+      function categoryDisplayName(cat) {
+        switch(cat) {
+          case 'head-boy': return 'Head Boy';
+          case 'head-girl': return 'Head Girl';
+          case 'green-house-male': return 'Green House Captain (Male)';
+          case 'green-house-female': return 'Green House Captain (Female)';
+          case 'yellow-house-male': return 'Yellow House Captain (Male)';
+          case 'yellow-house-female': return 'Yellow House Captain (Female)';
+          case 'red-house-male': return 'Red House Captain (Male)';
+          case 'red-house-female': return 'Red House Captain (Female)';
+          case 'blue-house-male': return 'Blue House Captain (Male)';
+          case 'blue-house-female': return 'Blue House Captain (Female)';
+          default: return cat;
+        }
+      }
+
+      // Vote counting and localStorage storage
+      function castVote(category, candidate) {
+        const storageKey = `votes_${category}`;
+        const savedVotes = JSON.parse(localStorage.getItem(storageKey)) || {};
+        savedVotes[candidate] = (savedVotes[candidate] || 0) + 1;
+        localStorage.setItem(storageKey, JSON.stringify(savedVotes));
+
+        // Show thank you message
+        thankYouMessage.textContent = `Thank you for voting for ${candidate}!`;
+        thankYouMessage.classList.add('visible');
+
+        // Disable vote buttons to prevent multiple votes
+        Array.from(candidateListEl.querySelectorAll('button.vote-btn'))
+          .forEach(btn => btn.disabled = true);
+
+        // After 3 seconds, return to home for next voter
+        setTimeout(() => {
+          showHome();
+        }, 3000);
+      }
+
+      // Show results view
+      function showResults() {
+        resultsList.innerHTML = '';
+        // For each category, list candidates and their vote counts
+        for (const cat in candidates) {
+          const categoryDiv = document.createElement('div');
+          categoryDiv.className = 'result-category ' + categoryClass(cat);
+
+          const categoryTitle = document.createElement('h3');
+          categoryTitle.textContent = categoryDisplayName(cat);
+          categoryDiv.appendChild(categoryTitle);
+
+          const candidateVotesDiv = document.createElement('div');
+          candidateVotesDiv.className = 'result-candidates';
+
+          const storedVotesRaw = localStorage.getItem(`votes_${cat}`);
+          let storedVotes = {};
+          try {
+            storedVotes = storedVotesRaw ? JSON.parse(storedVotesRaw) : {};
+          } catch {
+            storedVotes = {};
+          }
+
+          candidates[cat].forEach(candidate => {
+            const candidateDiv = document.createElement('div');
+            candidateDiv.className = 'result-candidate';
+
+            const nameSpan = document.createElement('span');
+            nameSpan.textContent = candidate.name;
+
+            const voteCountSpan = document.createElement('span');
+            voteCountSpan.className = 'vote-count';
+            voteCountSpan.textContent = storedVotes[candidate.name] || 0;
+
+            candidateDiv.appendChild(nameSpan);
+            candidateDiv.appendChild(voteCountSpan);
+            candidateVotesDiv.appendChild(candidateDiv);
+          });
+
+          categoryDiv.appendChild(candidateVotesDiv);
+          resultsList.appendChild(categoryDiv);
+        }
+
+        homeView.style.display = 'none';
+        candidateView.style.display = 'none';
+        resultsView.style.display = 'flex';
+
+        // Focus on results heading for accessibility
+        resultsView.focus();
+      }
+
+      // Reset votes: clear all voting data from localStorage
+      function resetVotes() {
+        if (confirm("Are you sure you want to reset all votes? This action cannot be undone.")) {
+          for (const cat in candidates) {
+            localStorage.removeItem(`votes_${cat}`);
+          }
+          alert("All votes have been reset.");
+          // If currently on results view, refresh to show reset data
+          if (resultsView.style.display === 'flex') {
+            showResults();
+          }
+        }
+        // Ensure focus returns correctly
+        showResultsBtn.focus();
+      }
+
+      // Event listeners for category buttons
+      document.querySelectorAll('button.vote-category-btn').forEach(button => {
+        button.addEventListener('click', e => {
+          const category = e.currentTarget.getAttribute('data-category');
+          showCandidates(category);
+        });
+      });
+
+      // Results button listener
+      showResultsBtn.addEventListener('click', () => showResults());
+
+      // Back from results button
+      resultsBackBtn.addEventListener('click', () => showHome());
+
+      // Reset button listener
+      resetBtn.addEventListener('click', resetVotes);
+
+      // Initial view
+      showHome();
+    })();
+  </script> -->
+  <script src="script.js"></script>
+</body>
+</html>
